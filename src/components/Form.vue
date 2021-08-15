@@ -1,9 +1,11 @@
 <template>
-  <div class="max-w-2xl mx-auto text-left my-20">
+  <div class="max-w-2xl mx-auto text-left my-20 px-4">
     <h2 class="text-secondary-dark font-oswald my-10 text-center">
       Contact Gammage
     </h2>
-    <div v-if="showSuccess">Thanks I'll Be in touch</div>
+    <h3 v-if="showSuccess" class="text-center text-yellow-500">
+      Thanks I'll Be in touch
+    </h3>
     <form class="w-full space-y-4" @submit.prevent="onSubmit" v-else>
       <p v-if="v$.$error" class="text-center error">
         Please fill out required fields
@@ -12,7 +14,7 @@
         <div class="flex flex-col flex-grow">
           <label class="" for="name">Full Name</label>
           <input
-            class="w-full text-secondary-dark"
+            class="w-full text-secondary-dark input"
             name="name"
             type="text"
             v-model="v$.name.$model"
@@ -23,7 +25,7 @@
         <div class="flex flex-col text-left flex-grow">
           <label for="email">Email</label>
           <input
-            class="w-full"
+            class="w-full input"
             name="email"
             type="email"
             v-model="v$.email.$model"
@@ -39,9 +41,25 @@
         </div>
       </div>
       <div class="flex flex-col text-left flex-grow">
+        <label for="phone">Phone Number</label>
+        <input
+          class="w-full input"
+          name="phone"
+          type="text"
+          v-model="v$.phone.$model"
+          @blur="v$.phone.$touch()"
+        />
+        <template v-if="v$.phone.$error">
+          <p
+            v-if="v$.phone.minLength || v$.phone.maxLength || v$.phone.numeric"
+            class="error"
+          >
+            Please enter a valid phone number
+          </p>
+        </template>
         <label for="message">Message</label>
         <textarea
-          class="w-full"
+          class="w-full input"
           rows="5"
           type="textarea"
           v-model="v$.message.$model"
@@ -59,7 +77,7 @@
             uppercase
             font-bold
             py-2
-            px-3
+            px-2
             rounded-sm
             transition-all
             transform
@@ -79,7 +97,13 @@
 <script>
 import { reactive, ref } from 'vue';
 import useVuelidate from '@vuelidate/core';
-import { required, email } from '@vuelidate/validators';
+import {
+  required,
+  email,
+  minLength,
+  numeric,
+  maxLength,
+} from '@vuelidate/validators';
 
 export default {
   setup() {
@@ -89,12 +113,19 @@ export default {
       name: '',
       email: '',
       message: '',
+      phone: '',
     });
 
     const rules = {
       name: { required },
       email: { required, email },
       message: { required },
+      phone: {
+        required,
+        minLength: minLength(10),
+        numeric,
+        maxLength: maxLength(11),
+      },
     };
 
     const num = 1;
@@ -106,6 +137,7 @@ export default {
           name: form.name,
           email: form.email,
           message: form.message,
+          phone: form.phone,
         };
         await fetch('https://formspree.io/f/xbjqplpo', {
           method: 'POST',
@@ -121,6 +153,7 @@ export default {
                 (form.name = ''),
                 (form.email = ''),
                 (form.message = ''),
+                (form.phone = ''),
                 v$.value.$reset();
             }
           })
@@ -142,7 +175,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 h2 {
   font-size: 4rem;
   text-transform: uppercase;
@@ -152,5 +185,9 @@ h2 {
 
 .error {
   @apply text-yellow-600;
+}
+
+.input {
+  @apply border-secondary-dark  outline-none focus:ring focus:ring-primary focus:bg-white focus:outline-yellow;
 }
 </style>

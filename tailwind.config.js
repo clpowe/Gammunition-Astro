@@ -5,6 +5,9 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
+      outline: {
+        yellow: '2px solid #ffeb3b',
+      },
       colors: {
         primary: {
           DEFAULT: '#ffeb3b',
@@ -33,5 +36,5 @@ module.exports = {
       backgroundColor: ['active'],
     },
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/forms')],
 };

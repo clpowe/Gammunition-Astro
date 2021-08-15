@@ -2,10 +2,10 @@
 const { info , item, price } = Astro.props;
 ---
 
-<div class="price-container shadow-md">
+<div class="price-container shadow-md text-left">
   <div class="description">
     <h1 class="item font-oswald">{item}</h1>
-    <h3 class="info text-accent font-oswald">{info}</h3>
+    <h3 class="info text-accent font-oswald text-left">{info}</h3>
   </div>
   <h1 class="price">${price}</h1>
 </div>
