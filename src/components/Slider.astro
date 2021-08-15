@@ -1,0 +1,81 @@
+---
+const HEADERS = {
+      headers: { Authorization: `Bearer ${import.meta.env.AIRTABLE}` },
+    }
+
+// Purchase and Sale
+const testimonialsResponce =await fetch(`https://api.airtable.com/v0/app24nIoWe3Q49B6u/Testimonials?&view=Grid%20view`,
+      HEADERS)
+const testimonials = await testimonialsResponce.json()
+
+
+import TestimonialCard from './TestimonialCard.astro'
+---
+
+<div class="relative">
+<div class="my-slider">
+{testimonials.records.map(record => 
+  <TestimonialCard img={record.fields.img} quote={record.fields.comment} name={record.fields.nameu}/>
+)}
+</div>
+
+<div id="controls" class="hidden md:block">
+  <button class="btn previous">&#10094;</button>
+  <button class="btn next">&#10095;</button>
+</div>
+</div>
+<!-- or ul.my-slider > li -->
+
+
+<script type="module">
+
+  var slider = tns({
+    container: '.my-slider',
+    items: 1,
+    slideBy: 'page',
+    arrowKeys: true,
+    autoplay: false,
+    nav:false,
+    autoplayPosition:"bottom",
+    controls: true,
+    controlsContainer: '#controls',
+    prevButton: '.previous',
+    nextButton: '.next',
+    center:true,
+    mouseDrag: true,
+    autoHeight: true
+  });
+
+  slider.getInfo();
+
+  const info = slider.getInfo();
+
+  </script>
+
+<style lang="scss">
+.btn {
+  background-color: #212121;
+  color: white;
+  font-size: 1rem;
+  position: absolute;
+  padding: .5rem 1rem;
+  border-radius: 0;
+  
+  &:hover {
+    background-color: #ffeb3b;
+  }
+
+  &:active {
+    background-color: #fff9c4;
+  }
+}
+
+.next{
+  right:0;
+  bottom: calc(50% - 1.5rem)
+}
+.previous{
+  left:0;
+  bottom: calc(50% - 1.5rem)
+}
+</style>

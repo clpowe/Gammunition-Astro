@@ -1,0 +1,151 @@
+---
+const HEADERS = {
+      headers: { Authorization: `Bearer ${import.meta.env.AIRTABLE}` },
+    }
+
+// Range Fee
+const rangeFeeResponce =await fetch(`https://api.airtable.com/v0/app24nIoWe3Q49B6u/Range%20Fees?&view=Grid%20view`,
+      HEADERS)
+const rangeFees = await rangeFeeResponce.json()
+
+// Live Fire Training
+const liveFireResponce =await fetch(`https://api.airtable.com/v0/app24nIoWe3Q49B6u/LiveFireTraining?&view=Grid%20view`,
+      HEADERS)
+const liveFire = await liveFireResponce.json()
+
+// In Home Training
+const inHomeResponce =await fetch(`https://api.airtable.com/v0/app24nIoWe3Q49B6u/InHomeTraining?&view=Grid%20view`,
+      HEADERS)
+const inHome = await inHomeResponce.json()
+
+// In Home Add Ons Training
+const addOnsResponce =await fetch(`https://api.airtable.com/v0/app24nIoWe3Q49B6u/inHomeAddOns?&view=Grid%20view`,
+      HEADERS)
+const addons = await addOnsResponce.json()
+
+
+import TrainingCard from './TrainingCard.astro'
+import PriceCard from './PriceCard.astro'
+---
+
+<section class="training-section py-20" id="TrainingServices">
+  <div class="container mx-auto text-center justify-center align-center px-5 gap-">
+    <h2 class="text-primary mb-28">Training Services</h2>
+    <h3 class="text-secondary-light">At the range (Live Fire)</h3>
+    <div class="split-container">
+    {liveFire.records.map(record =>(
+      <TrainingCard price={record.fields.price} time={record.fields.time}  description={record.fields.description} info={record.fields.info} />
+    ))}
+      
+    </div>
+    <h3 class="text-secondary-light">Range fees</h3>
+
+    <div class="price-container space-y-6">
+    {rangeFees.records.map(record => (
+      <PriceCard info={record.fields.info} item={record.fields.item} price={record.fields.price}/>
+    ))}
+    </div>
+    <div class="max-w-sm text-center mx-auto">
+        <a
+          href="#Booking"
+          class="
+            w-full
+            active:bg-accent
+            bg-primary
+            uppercase
+            font-bold
+            py-2
+            px-3
+            rounded-sm
+            transition-all
+            transform
+            hover:bg-primary-light
+            active:scale-75
+          "
+        >
+          Book Now
+        </a>
+      </div>
+
+    <h3 class="text-secondary-light mt-14">In-Home Training</h3>
+
+    <h4 class="text-accent">Firearm safety & training with unloaded firearms</h4>
+
+    <div class="split-container mb-24">
+      {inHome.records.map(record =>(
+      <TrainingCard price={record.fields.price} time={record.fields.time}  description={record.fields.description} info={record.fields.info} />
+    ))}
+    </div>
+
+    <div class="price-container space-y-6">
+      {addons.records.map(record => (
+      <PriceCard info={record.fields.info} item={record.fields.item} price={record.fields.price}/>
+    ))}
+    </div>
+
+    <div class="max-w-sm text-center mx-auto">
+        <a
+          href="#Booking"
+          class="
+            w-full
+            active:bg-accent
+            bg-primary
+            uppercase
+            font-bold
+            py-2
+            px-3
+            rounded-sm
+            transition-all
+            transform
+            hover:bg-primary-light
+            active:scale-75
+          "
+        >
+          Book Now
+        </a>
+      </div>
+  </div>
+</section>
+
+<script type='module'>
+
+</script>
+
+<style lang="scss">
+.training-section {
+  background: top no-repeat url('/assets/Training-BG.png') 	hsl(0, 0%, 13%);
+  background-size: contain;
+  font-family: 'Oswald', sans-serif;
+}
+
+h2 {
+  font-size: 4rem;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+  line-height: 1
+}
+
+h3 {
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  font-weight: 300;
+  margin-bottom: 1rem
+}
+
+h4 {
+  text-transform: uppercase;
+  font-weight: 300;
+  margin-top: -1rem;
+  margin-bottom: 2rem
+}
+
+.price-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 3rem;
+  max-width: 28rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+</style>

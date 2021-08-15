@@ -1,0 +1,28 @@
+---
+import Slider from './Slider.astro'
+---
+
+<section class="testimonials bg-secondary-dark py-20 px-4" id="Testimonials">
+  <div class="text-center mx-auto max-w-3xl">
+    <div class="split-container">
+      <div class="w-full text-center max-w-xl">
+        <h2 class="text-primary font-oswald">WHAT OUR CLIENTS SAY ABOUT US</h2>
+        <p class="text-sm font-roboto text-white">
+        We appreciate and value our clients opinion greatly. We aspire to perfection by sharpening our training skills and improving the training facilities. Your feedback matters a lot to us and helps become better.
+        </p>
+      </div>
+    </div>
+    <div>
+       <Slider client:load />
+    </div>
+  </div>
+</section>
+
+<style lang="scss">
+h2 {
+  font-size: 4rem;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  line-height: 1;
+}
+</style>

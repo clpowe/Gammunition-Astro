@@ -1,0 +1,31 @@
+{
+  "name": "@example/starter",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "astro dev",
+    "build": "astro build"
+  },
+  "devDependencies": {
+    "astro": "^0.18.12",
+    "autoprefixer": "^10.3.1",
+    "postcss": "^8.3.6",
+    "tailwindcss": "^2.2.7"
+  },
+  "dependencies": {
+    "@chenfengyuan/vue-carousel": "^2.0.0-beta",
+    "@glidejs/glide": "^3.4.1",
+    "@snowpack/plugin-dotenv": "^2.1.0",
+    "@snowpack/plugin-vue": "^2.6.2",
+    "@vue/compiler-sfc": "^3.1.4",
+    "@vuelidate/core": "^2.0.0-alpha.23",
+    "@vuelidate/validators": "^2.0.0-alpha.20",
+    "airtable": "^0.11.1",
+    "axios": "^0.21.1",
+    "canvas-confetti": "^1.4.0",
+    "dotenv": "^10.0.0",
+    "swiper": "^6.7.5",
+    "tiny-slider": "^2.9.3",
+    "vue": "^3.1.4"
+  }
+}
