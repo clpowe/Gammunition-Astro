@@ -62,7 +62,7 @@
           md:px-0
         "
       >
-        However You’ve Arrive Here, You’re Ready. Allow A Certified NRA
+        However You’ve Arrived Here, You’re Ready. Allow A Certified NRA
         Instructor To Transfer The Knowledge, Skills and Attitude You Need To Be
         A Responsible Firearm Operator.
       </p>
