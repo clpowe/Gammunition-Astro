@@ -19,7 +19,7 @@
               class="h-32 w-auto md:block hidden"
             />
           </div>
-          <div class="mb-4 sm:mb-0 font-oswald">
+          <div class="mb-6 sm:mb-0 font-oswald">
             <p
               class="
                 text-white
