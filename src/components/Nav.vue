@@ -14,6 +14,7 @@
         >
           <div class="sm:mr-2 grid place-content-center">
             <img
+              itemprop="logo"
               src="/assets/Logo@2x.png"
               alt="Gammunition Logo"
               class="h-32 w-auto md:block hidden"
@@ -21,6 +22,7 @@
           </div>
           <div class="mb-6 sm:mb-0 font-oswald">
             <p
+              itemprop="name"
               class="
                 text-white
                 uppercase
@@ -45,7 +47,7 @@
             </p>
           </div>
         </div>
-        <div class="text-primary text-2xl font-oswald">
+        <div itemprop="telephone" class="text-primary text-2xl font-oswald">
           <p><span>PH: </span>813 785-5462</p>
         </div>
       </div>
