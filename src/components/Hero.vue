@@ -42,7 +42,7 @@
           tracking-wider
           uppercase
           font-oswald font-thin
-          mb-14
+          mb-8
         "
       >
         <h2>Knowledge</h2>
