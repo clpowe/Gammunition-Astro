@@ -2,46 +2,28 @@
 const { price, time, description, info } = Astro.props;
 ---
 
-<div class="training">
-  <div class="price">
-    <h1>${ price }</h1>
+<div class="trainingCard items-center flex flex-col max-w-md lg:flex-row gap-4 p-4">
+  <div class="flex flex-col justify-center items-center flex-grow-0 self-auto lg:self-start">
+    <h1 class="text-white font-medium flex-grow-0 ">${ price }</h1>
     <h3 class="text-accent uppercase">per person</h3>
   </div>
-  <div class="sm:text-left text-center mt-2 space-y-1">
-    <h2>{time}</h2>
-    <p class="text-secondary-light">{description}</p>
+  <div class="lg:text-left text-center mt-2 space-y-1 flex-grow-0 max-w-xs md:max-w-md">
+    <h2 class="text-white">{time}</h2>
+    <p class="text-secondary-light text-xl font-thin tracking-wider">{description}</p>
     <h4 class="text-accent uppercase">{info}</h4>
   </div>
 </div>
 
 <style lang="scss">
-.training {
-  display: flex;
-  flex-direction: column;
-  max-width: 28rem;
-
-  @media (min-width: 640px) {
-    flex-direction: row;
-    text-align: center;  
-  }
-}
-
-.price{
-  display: flex;
-  align-items: flex-start;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  flex-grow: 0;
-  margin-right: 1rem;
+trainingCard{
+  box-shadow: 0px 4px 6px -1px rgba(255,255,255,0.75);
 }
 
 h1{
-  color: white;
-  font-size: 4rem;
-  font-weight: 500;
-  margin-top: -1rem;
-  flex-grow: 0;
+  font-size: 6rem;
+  @media (min-width: 640px) {
+    font-size: 7rem;
+  }
 }
 
 h2{
@@ -60,9 +42,5 @@ h4{
   letter-spacing: .5px;
 }
 
-p{
-  font-weight: 200;
-  letter-spacing: .5px;
-  font-size: .8rem;
-}
+
 </style>

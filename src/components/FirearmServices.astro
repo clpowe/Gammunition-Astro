@@ -20,7 +20,7 @@ import PriceCard from './PriceCard.astro'
 <section class="py-20 px-4 bg-white" id="FirearmServices">
   <div class="text-center mx-auto max-w-3xl space-y-5">
     <h2 class="font-oswald">Firearm Services</h2>
-    <div class="split-container">
+    <div class="">
       <div class="w-full">
         <h3 class="text-secondary font-oswald">Purchase & Selling</h3>
         <div class="price-container space-y-4">
@@ -30,7 +30,7 @@ import PriceCard from './PriceCard.astro'
         </div>
       </div>
       <div class="w-full">
-        <h3 class="text-secondary font-oswald">Weapon cleaning</h3>
+        <h3 class="text-secondary font-oswald mb-6 mt-10">Weapon cleaning</h3>
         <div class="price-container space-y-4">
           {weaponCleaning.records.map(record => (
       <PriceCard info={record.fields.info} item={record.fields.item} price={record.fields.price}/>

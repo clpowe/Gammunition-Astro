@@ -29,16 +29,16 @@ import PriceCard from './PriceCard.astro'
 ---
 
 <section class="training-section py-20" id="TrainingServices">
-  <div class="container mx-auto text-center justify-center align-center px-5 gap-">
-    <h2 class="text-primary mb-28">Training Services</h2>
-    <h3 class="text-secondary-light">At the range (Live Fire)</h3>
-    <div class="split-container">
+  <div class="container mx-auto text-center justify-center align-center px-5">
+    <h2 class="text-transparent bg-clip-text bg-gradient-to-b from-primary to-yellow-300 mb-28">Training Services</h2>
+    <h3 class="text-secondary-light">At the range (Live Fire)</h3>  
+    <div class="flex flex-col items-center justify-center md:flex-row mb-10 gap-4">
     {liveFire.records.map(record =>(
       <TrainingCard price={record.fields.price} time={record.fields.time}  description={record.fields.description} info={record.fields.info} />
     ))}
       
     </div>
-    <h3 class="text-secondary-light">Range Fees</h3>
+    <h3 class="text-secondary-light mb-5">Range Fees</h3>
 
     <div class="price-container space-y-6">
     {rangeFees.records.map(record => (
@@ -67,9 +67,8 @@ import PriceCard from './PriceCard.astro'
         </a>
       </div>
 
-    <h3 class="text-secondary-light mt-14">In-Home Training</h3>
-
-    <h4 class="text-accent">Firearm safety & training with unloaded firearms</h4>
+    <h3 class="text-secondary-light mb-1 mt-10">In-Home Training</h3>
+    <h4 class="text-yellow-300 mb-10">Firearm safety & training with unloaded firearms</h4>
 
     <div class="split-container mb-24">
       {inHome.records.map(record =>(
@@ -129,14 +128,12 @@ h3 {
   font-size: 1.5rem;
   text-transform: uppercase;
   font-weight: 300;
-  margin-bottom: 1rem
 }
 
 h4 {
   text-transform: uppercase;
   font-weight: 300;
-  margin-top: -1rem;
-  margin-bottom: 2rem
+
 }
 
 .price-container {
