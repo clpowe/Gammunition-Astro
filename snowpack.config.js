@@ -6,9 +6,7 @@ module.exports = {
   mount: {
     /* ... */
   },
-  env: {
-    AIRTABLE: 'keyjXkmALVHr1yPDD',
-  },
+
   plugins: ['@snowpack/plugin-vue', '@snowpack/plugin-dotenv'],
   packageOptions: {
     /* ... */
