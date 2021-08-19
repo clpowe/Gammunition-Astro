@@ -4,7 +4,7 @@ const HEADERS = {
     }
 
 // Purchase and Sale
-const testimonialsResponce =await fetch(`https://api.airtable.com/v0/${import.meta.env.SNOWPACK_PUBLIC_BASE_ID}/Testimonials?&view=Grid%20view`,
+const testimonialsResponce =await fetch(`https://api.airtable.com/v0/appq9rVNBW9qLegHl/Testimonials?&view=Grid%20view`,
       HEADERS)
 const testimonials = await testimonialsResponce.json()
 
