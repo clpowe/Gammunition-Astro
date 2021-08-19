@@ -1,9 +1,9 @@
 ---
-const KEY = __SNOWPACK_ENV__.AIRTABLE
+const KEY = import.meta.env.SNOWPACK_PUBLIC_API_KEY
 const HEADERS = {
       headers: { Authorization: `Bearer ${KEY}` },
     }
-const responce =await fetch('https://api.airtable.com/v0/app24nIoWe3Q49B6u/Feature%20Section/receeyP2JaINsow5a',
+const responce =await fetch(`https://api.airtable.com/v0/${import.meta.env.SNOWPACK_PUBLIC_BASE_ID}/Sections/recOIuqY2pFHhzKuO`,
       HEADERS)
 const data = await responce.json()
 ---

@@ -1,15 +1,15 @@
 ---
 const HEADERS = {
-      headers: { Authorization: `Bearer ${import.meta.env.AIRTABLE}` },
+      headers: { Authorization: `Bearer ${import.meta.env.SNOWPACK_PUBLIC_API_KEY}` },
     }
 
 // Purchase and Sale
-const purchaseAndSellResponce =await fetch(`https://api.airtable.com/v0/app24nIoWe3Q49B6u/PurchaseAndSell?&view=Grid%20view`,
+const purchaseAndSellResponce =await fetch(`https://api.airtable.com/v0/${import.meta.env.SNOWPACK_PUBLIC_BASE_ID}/PurchaseAndSell?&view=Grid%20view`,
       HEADERS)
 const purchaseAndSell = await purchaseAndSellResponce.json()
 
 // Weapon Cleaning
-const weaponCleaningResponce =await fetch(`https://api.airtable.com/v0/app24nIoWe3Q49B6u/WeaponCleaning?&view=Grid%20view`,
+const weaponCleaningResponce =await fetch(`https://api.airtable.com/v0/${import.meta.env.SNOWPACK_PUBLIC_BASE_ID}/WeaponCleaning?&view=Grid%20view`,
       HEADERS)
 const weaponCleaning = await weaponCleaningResponce.json()
 
