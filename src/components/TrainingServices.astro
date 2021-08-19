@@ -1,25 +1,25 @@
 ---
 const HEADERS = {
-      headers: { Authorization: `Bearer ${import.meta.env.AIRTABLE}` },
+      headers: { Authorization: `Bearer ${import.meta.env.SNOWPACK_PUBLIC_API_KEY}` },
     }
 
 // Range Fee
-const rangeFeeResponce =await fetch(`https://api.airtable.com/v0/app24nIoWe3Q49B6u/Range%20Fees?&view=Grid%20view`,
+const rangeFeeResponce =await fetch(`https://api.airtable.com/v0/${import.meta.env.SNOWPACK_PUBLIC_BASE_ID}/RangeFees?&view=Grid%20view`,
       HEADERS)
 const rangeFees = await rangeFeeResponce.json()
 
 // Live Fire Training
-const liveFireResponce =await fetch(`https://api.airtable.com/v0/app24nIoWe3Q49B6u/LiveFireTraining?&view=Grid%20view`,
+const liveFireResponce =await fetch(`https://api.airtable.com/v0/${import.meta.env.SNOWPACK_PUBLIC_BASE_ID}/LiveFireTraining?&view=Grid%20view`,
       HEADERS)
 const liveFire = await liveFireResponce.json()
 
 // In Home Training
-const inHomeResponce =await fetch(`https://api.airtable.com/v0/app24nIoWe3Q49B6u/InHomeTraining?&view=Grid%20view`,
+const inHomeResponce =await fetch(`https://api.airtable.com/v0/${import.meta.env.SNOWPACK_PUBLIC_BASE_ID}/InHomeTraining?&view=Grid%20view`,
       HEADERS)
 const inHome = await inHomeResponce.json()
 
 // In Home Add Ons Training
-const addOnsResponce =await fetch(`https://api.airtable.com/v0/app24nIoWe3Q49B6u/inHomeAddOns?&view=Grid%20view`,
+const addOnsResponce =await fetch(`https://api.airtable.com/v0/${import.meta.env.SNOWPACK_PUBLIC_BASE_ID}/inHomeAddOns?&view=Grid%20view`,
       HEADERS)
 const addons = await addOnsResponce.json()
 

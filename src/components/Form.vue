@@ -142,7 +142,7 @@ export default {
         await fetch('https://formspree.io/f/xbjqplpo', {
           method: 'POST',
           headers: {
-            // Authorization: `Bearer ${import.meta.env.AIRTABLE}`,
+            // Authorization: `Bearer ${import.meta.env.SNOWPACK_PUBLIC_API_KEY}`,
             'Content-Type': 'application/json',
           },
           body: JSON.stringify(mydata),

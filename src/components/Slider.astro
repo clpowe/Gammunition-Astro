@@ -1,10 +1,10 @@
 ---
 const HEADERS = {
-      headers: { Authorization: `Bearer ${import.meta.env.AIRTABLE}` },
+      headers: { Authorization: `Bearer ${import.meta.env.SNOWPACK_PUBLIC_API_KEY}` },
     }
 
 // Purchase and Sale
-const testimonialsResponce =await fetch(`https://api.airtable.com/v0/app24nIoWe3Q49B6u/Testimonials?&view=Grid%20view`,
+const testimonialsResponce =await fetch(`https://api.airtable.com/v0/${import.meta.env.SNOWPACK_PUBLIC_BASE_ID}/Testimonials?&view=Grid%20view`,
       HEADERS)
 const testimonials = await testimonialsResponce.json()
 
