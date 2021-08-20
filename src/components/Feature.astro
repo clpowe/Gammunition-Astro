@@ -3,7 +3,7 @@ const KEY = process.env.SNOWPACK_PUBLIC_API_KEY
 const HEADERS = {
       headers: { Authorization: `Bearer ${KEY}` },
     }
-const responce = await fetch(`https://api.airtable.com/v0/appq9rVNBW9qLegHl/Sections/recOIuqY2pFHhzKuO`,
+const responce = await fetch(`https://api.airtable.com/v0/${process.env.SNOWPACK_PUBLIC_BASE_ID}/Sections/recOIuqY2pFHhzKuO`,
       HEADERS)
 const data = await responce.json()
 ---

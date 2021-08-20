@@ -4,12 +4,12 @@ const HEADERS = {
     }
 
 // Purchase and Sale
-const purchaseAndSellResponce =await fetch(`https://api.airtable.com/v0/appq9rVNBW9qLegHl/PurchaseAndSell?&view=Grid%20view`,
+const purchaseAndSellResponce =await fetch(`https://api.airtable.com/v0/${process.env.SNOWPACK_PUBLIC_BASE_ID}/PurchaseAndSell?&view=Grid%20view`,
       HEADERS)
 const purchaseAndSell = await purchaseAndSellResponce.json()
 
 // Weapon Cleaning
-const weaponCleaningResponce =await fetch(`https://api.airtable.com/v0/appq9rVNBW9qLegHl/WeaponCleaning?&view=Grid%20view`,
+const weaponCleaningResponce =await fetch(`https://api.airtable.com/v0/${process.env.SNOWPACK_PUBLIC_BASE_ID}/WeaponCleaning?&view=Grid%20view`,
       HEADERS)
 const weaponCleaning = await weaponCleaningResponce.json()
 
