@@ -1,5 +1,5 @@
 ---
-const KEY = import.meta.env.SNOWPACK_PUBLIC_API_KEY
+const KEY = process.env.SNOWPACK_PUBLIC_API_KEY
 const HEADERS = {
       headers: { Authorization: `Bearer ${KEY}` },
     }
