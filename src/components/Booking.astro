@@ -1,29 +1,18 @@
 ---
-
+import SectionHead from './SectionHead.astro'
 ---
 
-<section class="bg-secondary-dark text-center px-6 pb-32" id="Booking">
-<h2 class="text-transparent bg-clip-text bg-gradient-to-b from-primary to-yellow-400  font-oswald">Booking</h2>
+<section class="bg-secondary-dark text-center pt-5" id="Booking">
+<div class="mb-4">
+
+<SectionHead>
+  Booking
+</SectionHead>
+</div>
+
+
 <!-- Calendly inline widget begin -->
 <div class="calendly-inline-widget border-0 " data-url="https://calendly.com/bookinggammunition?hide_landing_page_details=1&hide_gdpr_banner=1&background_color=212121&text_color=ffffff&primary_color=ffeb3b" style="min-width:320px;height:650px;"></div>
 <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
 <!-- Calendly inline widget end -->
 </section>
-
-
-<style>
-
-h2 {
-  font-size: 4rem;
-  text-transform: uppercase;
-  margin-bottom: 1rem;
-  line-height: 1;
-}
-
-h3 {
-  font-size: 1.5rem;
-  text-transform: uppercase;
-  font-weight: 300;
-  margin-top: 2rem;
-}
-</style>

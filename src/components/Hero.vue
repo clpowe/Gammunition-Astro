@@ -18,7 +18,7 @@
         alt="Gammunition Logo"
         class="h-60 w-auto md:hidden block mb-14 mx-auto"
       />
-      <h1
+      <div
         class="
           uppercase
           leading-none
@@ -32,7 +32,7 @@
       >
         <span class="text-4xl sm:text-7xl text-white">Welcome to</span><br />
         Gammunition
-      </h1>
+      </div>
       <div
         class="
           flex
@@ -45,11 +45,11 @@
           mb-8
         "
       >
-        <h2>Knowledge</h2>
+        <div>Knowledge</div>
         <span>|</span>
-        <h2>Skill</h2>
+        <div>Skill</div>
         <span>|</span>
-        <h2>Attitude</h2>
+        <div>Attitude</div>
       </div>
       <p
         class="

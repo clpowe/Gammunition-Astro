@@ -9,8 +9,6 @@ const testimonialsResponce =await fetch(`https://api.airtable.com/v0/${process.e
       HEADERS)
 const testimonials = await testimonialsResponce.json()
 
-console.log(testimonials)
-
 import TestimonialCard from './TestimonialCard.astro'
 ---
 

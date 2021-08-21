@@ -23,29 +23,42 @@ const addOnsResponce =await fetch(`https://api.airtable.com/v0/${process.env.SNO
       HEADERS)
 const addons = await addOnsResponce.json()
 
-
+import SectionHead from './SectionHead.astro'
+import Subhead from './Subhead.astro'
 import TrainingCard from './TrainingCard.astro'
 import PriceCard from './PriceCard.astro'
 ---
 
 <section class="training-section py-20" id="TrainingServices">
-  <div class="container mx-auto text-center justify-center align-center px-5">
-    <h2 class="text-transparent bg-clip-text bg-gradient-to-b from-primary to-yellow-300 mb-28">Training Services</h2>
-    <h3 class="text-secondary-light">At the range (Live Fire)</h3>  
-    <div class="flex flex-col items-center justify-center md:flex-row mb-10 gap-4">
-    {liveFire.records.map(record =>(
-      <TrainingCard price={record.fields.price} time={record.fields.time}  description={record.fields.description} info={record.fields.info} />
-    ))}
-      
-    </div>
-    <h3 class="text-secondary-light mb-5">Range Fees</h3>
+  <div class="container mx-auto text-center px-4">
 
-    <div class="price-container space-y-6">
-    {rangeFees.records.map(record => (
-      <PriceCard info={record.fields.info} item={record.fields.item} price={record.fields.price}/>
-    ))}
+    <div class="mb-10">
+      <SectionHead>
+      Training Services
+      </SectionHead>
     </div>
-    <div class="max-w-sm text-center mx-auto">
+
+    <div class="mb-10">
+      <Subhead>
+      Live Fire Training
+      </Subhead>
+    </div>
+
+    <div class="two-column">
+      {liveFire.records.map(record =>(
+        <TrainingCard price={record.fields.price} time={record.fields.time}  description={record.fields.description} info={record.fields.info} />
+      ))}
+    </div>
+
+    <div class="text-secondary-light tracking-wide uppercase text-2xl mb-4">Range Fees</div>
+
+    <div class="price-container">
+      {rangeFees.records.map(record => (
+        <PriceCard info={record.fields.info} item={record.fields.item} price={record.fields.price}/>
+      ))}
+    </div>
+
+    <div class="my-14">
         <a
           href="#Booking"
           class="
@@ -65,24 +78,29 @@ import PriceCard from './PriceCard.astro'
         >
           Book Now
         </a>
-      </div>
+    </div>
 
-    <h3 class="text-secondary-light mb-1 mt-10">In-Home Training</h3>
-    <h4 class="text-yellow-300 mb-10">Firearm safety & training with unloaded firearms</h4>
+<div class="">
+    <Subhead>
+      In-Home Training
+    </Subhead>
+</div>
+    
+    <div class="text-yellow-300 mb-8 tracking-wider">Firearm safety & training with unloaded firearms</div>
 
-    <div class="split-container mb-24">
+    <div class="mx-auto">
       {inHome.records.map(record =>(
       <TrainingCard price={record.fields.price} time={record.fields.time}  description={record.fields.description} info={record.fields.info} />
     ))}
     </div>
 
-    <div class="price-container space-y-6">
+    <div class="price-container mt-10">
       {addons.records.map(record => (
       <PriceCard info={record.fields.info} item={record.fields.item} price={record.fields.price}/>
     ))}
     </div>
 
-    <div class="max-w-sm text-center mx-auto">
+    <div class="mt-10">
         <a
           href="#Booking"
           class="
@@ -115,34 +133,5 @@ import PriceCard from './PriceCard.astro'
   background: top no-repeat url('/assets/Training-BG.png') 	hsl(0, 0%, 13%);
   background-size: contain;
   font-family: 'Oswald', sans-serif;
-}
-
-h2 {
-  font-size: 4rem;
-  text-transform: uppercase;
-  margin-bottom: 2rem;
-  line-height: 1
-}
-
-h3 {
-  font-size: 1.5rem;
-  text-transform: uppercase;
-  font-weight: 300;
-}
-
-h4 {
-  text-transform: uppercase;
-  font-weight: 300;
-
-}
-
-.price-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 3rem;
-  max-width: 28rem;
-  margin-left: auto;
-  margin-right: auto;
 }
 </style>

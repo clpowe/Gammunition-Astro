@@ -13,25 +13,31 @@ const weaponCleaningResponce =await fetch(`https://api.airtable.com/v0/${process
       HEADERS)
 const weaponCleaning = await weaponCleaningResponce.json()
 
-
+import SectionHead from './SectionHead.astro'
 import PriceCard from './PriceCard.astro'
+import Subhead from './Subhead.astro'
 ---
 
 <section class="py-20 px-4 bg-white" id="FirearmServices">
   <div class="text-center mx-auto max-w-3xl space-y-5">
-    <h2 class="font-oswald">Firearm Services</h2>
-    <div class="">
+
+  <div class="section-heading text-gradient-grey mb-10">
+  Firearm Services
+  </div>
+    
+    <div class="two-column">
       <div class="w-full">
-        <h3 class="text-secondary font-oswald">Purchase & Selling</h3>
-        <div class="price-container space-y-4">
+      
+        <Subhead>Purchase & Selling</Subhead>
+        <div class="price-container mt-6">
           {purchaseAndSell.records.map(record => (
       <PriceCard info={record.fields.info} item={record.fields.item} price={record.fields.price}/>
     ))}
         </div>
       </div>
       <div class="w-full">
-        <h3 class="text-secondary font-oswald mb-6 mt-10">Weapon cleaning</h3>
-        <div class="price-container space-y-4">
+        <Subhead >Weapon cleaning</Subhead>
+        <div class="price-container mt-6">
           {weaponCleaning.records.map(record => (
       <PriceCard info={record.fields.info} item={record.fields.item} price={record.fields.price}/>
     ))}
@@ -40,30 +46,3 @@ import PriceCard from './PriceCard.astro'
     </div>
   </div>
 </section>
-
-<style lang="scss">
-
-
-h2 {
-  font-size: 4rem;
-  text-transform: uppercase;
-  margin-bottom: 2rem;
-  line-height: 1
-}
-
-h3 {
-  font-size: 1.5rem;
-  text-transform: uppercase;
-  font-weight: 300;
-  margin-bottom: 1rem
-}
-
-.price-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  max-width: 28rem;
-  margin-left: auto;
-  margin-right: auto;
-}
-</style>

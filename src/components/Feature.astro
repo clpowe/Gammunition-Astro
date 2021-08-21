@@ -10,36 +10,11 @@ const data = await responce.json()
 
 
 <div class="bg-gradient-to-b from-primary to-yellow-300 grid place-content-center py-20 px-auto">
-  <div class="text-center max-w-xl space-y-5 px-2">
-    <h2 class="font-oswald">{ data.fields.subhead }</h2>
-    <h1 class="font-oswald">{data.fields.head}</h1>
+  <div class="text-center max-w-xl space-y-2 px-2">
+    <div class="font-oswald text-xl">{ data.fields.subhead }</div>
+    <div class="font-oswald text-3xl ">{data.fields.head}</div>
     <p>{data.fields.Text}
     </p>
   </div>
 </div>
 
-<script>
-
-
-
-</script>
-
-<style lang="scss">
-h1 {
-    text-transform: uppercase;
-    font-weight: bold;
-    font-size: 2rem;
-    line-height: 1.2
-    }
-
-h2 { 
-font-weight: bold;
-text-transform: uppercase;
-letter-spacing: .5px;
-}
-
-p {
-  font-weight: 200;
-  }
-
-</style>

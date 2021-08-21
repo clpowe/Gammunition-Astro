@@ -1,11 +1,11 @@
 <template>
   <div class="max-w-2xl mx-auto text-left my-20 px-4">
-    <h2 class="text-secondary-dark font-oswald my-10 text-center">
+    <div class="section-heading text-gradient-grey text-center mb-10">
       Contact Gammage
-    </h2>
-    <h3 v-if="showSuccess" class="text-center text-yellow-500">
+    </div>
+    <div v-if="showSuccess" class="text-center text-yellow-500">
       Thanks I'll Be in touch
-    </h3>
+    </div>
     <form class="w-full space-y-4" @submit.prevent="onSubmit" v-else>
       <p v-if="v$.$error" class="text-center error">
         Please fill out required fields
@@ -142,7 +142,6 @@ export default {
         await fetch('https://formspree.io/f/xbjqplpo', {
           method: 'POST',
           headers: {
-            // Authorization: `Bearer ${process.env.SNOWPACK_PUBLIC_API_KEY}`,
             'Content-Type': 'application/json',
           },
           body: JSON.stringify(mydata),
@@ -176,13 +175,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-h2 {
-  font-size: 4rem;
-  text-transform: uppercase;
-  margin-bottom: 1rem;
-  line-height: 1;
-}
-
 .error {
   @apply text-yellow-600;
 }
