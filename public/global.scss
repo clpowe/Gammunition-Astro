@@ -27,5 +27,5 @@ html {
 }
 
 .two-column {
-  @apply flex flex-col items-center justify-center md:flex-row mb-10 gap-4;
+  @apply container flex flex-col items-center justify-center md:flex-row mb-10 gap-4;
 }
