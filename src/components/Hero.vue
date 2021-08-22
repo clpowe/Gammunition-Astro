@@ -13,11 +13,11 @@
         px-2
       "
     >
-      <img
-        src="/assets/Logo@2x.png"
-        alt="Gammunition Logo"
-        class="h-60 w-auto md:hidden block mb-14 mx-auto"
-      />
+      <div
+        class="w-auto md:hidden block mb-14 mx-auto bg-primary rounded-lg p-3"
+      >
+        <img src="/logo.svg" alt="Gammunition Logo" class="h-56" />
+      </div>
       <div
         class="
           uppercase

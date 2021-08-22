@@ -1,5 +1,15 @@
 module.exports = {
-  purge: ['./public/**/*.html', './src/**/*.{astro,js,jsx,svelte,ts,tsx,vue}'],
+  purge: {
+    enabled: true,
+    content: [
+      './public/**/*.html',
+      './src/**/*.{astro,js,jsx,svelte,ts,tsx,vue}',
+    ],
+    options: {
+      keyframes: true,
+      fontFace: true,
+    },
+  },
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {

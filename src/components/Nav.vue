@@ -12,12 +12,14 @@
             sm:mr-auto sm:mx-0 sm:flex-row sm:text-left
           "
         >
-          <div class="sm:mr-2 grid place-content-center">
+          <div
+            class="sm:mr-2 grid place-content-center bg-primary rounded-md p-1"
+          >
             <img
               itemprop="logo"
-              src="/assets/Logo@2x.png"
+              src="/logo.svg"
               alt="Gammunition Logo"
-              class="h-32 w-auto md:block hidden"
+              class="h-28 w-auto md:block hidden"
             />
           </div>
           <div class="mb-6 sm:mb-0 font-oswald">
