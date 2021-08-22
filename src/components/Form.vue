@@ -12,25 +12,29 @@
       </p>
       <div class="flex flex-col sm:flex-row gap-4">
         <div class="flex flex-col flex-grow">
-          <label class="" for="name">Full Name</label>
-          <input
-            class="w-full text-secondary-dark input"
-            name="name"
-            type="text"
-            v-model="v$.name.$model"
-            @blur="v$.name.$touch()"
-          />
+          <label class="" for="name"
+            >Full Name
+            <input
+              class="w-full text-secondary-dark input"
+              name="name"
+              type="text"
+              v-model="v$.name.$model"
+              @blur="v$.name.$touch()"
+            />
+          </label>
           <div v-if="v$.name.$error" class="error">Name field is required</div>
         </div>
         <div class="flex flex-col text-left flex-grow">
-          <label for="email">Email</label>
-          <input
-            class="w-full input"
-            name="email"
-            type="email"
-            v-model="v$.email.$model"
-            @blur="v$.email.$touch()"
-          />
+          <label for="email"
+            >Email
+            <input
+              class="w-full input"
+              name="email"
+              type="email"
+              v-model="v$.email.$model"
+              @blur="v$.email.$touch()"
+            />
+          </label>
           <template v-if="v$.email.$error">
             <p v-if="v$.email.email" class="error">
               Please enter a valid email
@@ -41,14 +45,16 @@
         </div>
       </div>
       <div class="flex flex-col text-left flex-grow">
-        <label for="phone">Phone Number</label>
-        <input
-          class="w-full input"
-          name="phone"
-          type="text"
-          v-model="v$.phone.$model"
-          @blur="v$.phone.$touch()"
-        />
+        <label for="phone"
+          >Phone Number
+          <input
+            class="w-full input"
+            name="phone"
+            type="text"
+            v-model="v$.phone.$model"
+            @blur="v$.phone.$touch()"
+          />
+        </label>
         <template v-if="v$.phone.$error">
           <p
             v-if="v$.phone.minLength || v$.phone.maxLength || v$.phone.numeric"
@@ -57,14 +63,16 @@
             Please enter a valid phone number
           </p>
         </template>
-        <label for="message">Message</label>
-        <textarea
-          class="w-full input"
-          rows="5"
-          type="textarea"
-          v-model="v$.message.$model"
-          @blur="v$.message.$touch()"
-        ></textarea>
+        <label for="message"
+          >Message
+          <textarea
+            class="w-full input"
+            rows="5"
+            type="textarea"
+            v-model="v$.message.$model"
+            @blur="v$.message.$touch()"
+          ></textarea>
+        </label>
       </div>
       <div class="max-w-sm text-center mx-auto">
         <button
