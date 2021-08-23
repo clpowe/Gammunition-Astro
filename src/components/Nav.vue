@@ -13,7 +13,15 @@
           "
         >
           <div
-            class="sm:mr-2 grid place-content-center bg-primary rounded-md p-1"
+            class="
+              sm:mr-2
+              place-content-center
+              bg-primary
+              p-1
+              logo
+              hidden
+              md:block
+            "
           >
             <img
               itemprop="logo"

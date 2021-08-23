@@ -13,9 +13,7 @@
         px-2
       "
     >
-      <div
-        class="w-auto md:hidden block mb-14 mx-auto bg-primary rounded-lg p-3"
-      >
+      <div class="w-auto md:hidden block mb-14 mx-auto bg-primary logo p-3">
         <img src="/logo.svg" alt="Gammunition Logo" class="h-56" />
       </div>
       <div
@@ -97,8 +95,13 @@ export default {};
 
 <style language="scss">
 .hero {
-  background-image: url('https://ik.imagekit.io/cpds/HeroIMG_dvHjr-HYP.png');
+  background-image: url('/HeroIMG.png');
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: 10% center;
+}
+
+.logo {
+  border-radius: 13%;
 }
 </style>
